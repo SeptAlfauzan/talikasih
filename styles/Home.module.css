@@ -1,11 +1,25 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
+}
+#sectionLanding {
+  padding: 0;
+  background-image: url("./../public/images/Background\ section\ 1.png");
+  background-position-y: 20%;
+}
+#sectionAboutUs {
+  padding: 0;
+  background-image: url("./../public/images/Background\ section\ 2.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-y: 70%;
+  background-color: #a1e3d8;
 }
 
 .main {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
+  background-color: #fbf8ef;
   display: flex;
   flex-direction: column;
   justify-content: center;

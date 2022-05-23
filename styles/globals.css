@@ -1,5 +1,6 @@
 html,
 body {
+  /* background-color: #fbf8ef; */
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -14,3 +15,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+ol > li::before {
+  border-radius: 100% !important;
+  width: 28px !important;
+  border: 1px solid gray;
+  height: 28px !important;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
