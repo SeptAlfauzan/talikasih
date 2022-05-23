@@ -41,7 +41,7 @@ export default function FormOne() {
                 <h2 className='mt-14 text-xl mb-3 font-bold'>Isi Laporan Pengaduan</h2>
                 <div className='mb-3'>
                     <label>Nama</label>
-                    <input name='nama' required type='text' onBlur={() => setNameClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${nameClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
+                    <input name='name' required type='text' onBlur={() => setNameClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${nameClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
                     <p className={`mt-2 text-xs  invisible ${nameClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                         Nama harus diisi
                     </p>
@@ -55,7 +55,7 @@ export default function FormOne() {
                 </div>
                 <div className='mb-5'>
                     <label>Laporan</label>
-                    <textarea name='laporan' className='input border-2  w-full focus:border-purple-300 focus:bg-purple-100 invalid:text-red-500 invalid:border-red-500 outline-none rounded-lg px-3 py-1' />
+                    <textarea name='content' className='input border-2  w-full focus:border-purple-300 focus:bg-purple-100 invalid:text-red-500 invalid:border-red-500 outline-none rounded-lg px-3 py-1' />
                 </div>
 
                 <button className='bg-purple-500 py-3 text-white rounded-lg hover:bg-purple-700'>Submit Laporan</button>
