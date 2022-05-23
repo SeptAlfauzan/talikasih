@@ -13,8 +13,8 @@ export default function Aduan({ posts }) {
     console.log(posts)
     return (
         <UserLayout>
-            <main className='my-10'>
-                <div className='flex flex-wrap md:px-36 px-16 w-full gap-4 justify-between'>
+            <main className='my-10 flex justify-center'>
+                <div className='flex flex-wrap md:px-36 px-16 w-full gap-4'>
                     {posts.map((post) => (
                         <div key={post.id} className='border pt-6 pb-10 px-8 rounded-lg md:w-80 w-full relative'>
                             <p className='flex justify-between text-slate-400 text-xs'>Dibuat: <span className='text-slate-600'>{post.date}</span></p>
