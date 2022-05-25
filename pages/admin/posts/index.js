@@ -45,7 +45,7 @@ export default function Posts({ posts }) {
         }
         fetchdata();
     }, [])
-    if (!posts) return null;
+
     return (
         <AdminLayout>
             <div className='w-full rounded bg-white px-8 py-2 mb-2 flex flex-row justify-between'>
@@ -61,12 +61,22 @@ export default function Posts({ posts }) {
     );
 }
 export async function getStaticProps() {
-    const res = await getPosts();
-    console.log(res)
-    return {
-        props: {
-            posts: res,
-        },
-        revalidate: 1
+    try {
+        const res = await getPosts();
+        console.log(res)
+        return {
+            props: {
+                posts: res,
+            },
+            revalidate: 1
+        }
+    } catch (error) {
+        console.log(error);
+        return {
+            props: {
+                posts: [],
+            },
+            revalidate: 1
+        }
     }
 }
