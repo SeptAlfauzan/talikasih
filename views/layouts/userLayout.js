@@ -1,11 +1,13 @@
-import styles from '../../styles/Home.module.css'
+
+import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 
 export default function UserLayout({ children }) {
     return (
-        <div>
+        <div className='relative'>
             <Navbar />
             {children}
+            <Footer />
         </div>
     )
 }

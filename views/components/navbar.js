@@ -35,6 +35,16 @@ export default function Navbar() {
                     </div>
                 </li>
                 <li className="px-3 rounded-full group relative">
+                    <div className={`${urlPath == 'member' ? active : 'after:w-0'} after:text-transparent  after:content-['*'] after:rounded-full after:-z-10  after:absolute after:left-0  whitespace-nowrap  group-hover:after:bg-purple-600 group-hover:after:w-full after:duration-200 group-hover:cursor-pointer`}>
+
+                        <Link href={'/member'}>
+                            <span className={`group-hover:text-white ${urlPath == 'member' ? 'text-white' : null}`}>
+                                Daftar Member
+                            </span>
+                        </Link>
+                    </div>
+                </li>
+                <li className="px-3 rounded-full group relative">
                     <div className={`${urlPath == 'aduan' ? active : 'after:w-0'} after:text-transparent  after:content-['*'] after:rounded-full after:-z-10  after:absolute after:left-0  whitespace-nowrap  group-hover:after:bg-purple-600 group-hover:after:w-full after:duration-200 group-hover:cursor-pointer`}>
 
                         <Link href={'/aduan'}>

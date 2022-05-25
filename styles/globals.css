@@ -26,6 +26,56 @@ ol > li::before {
   align-items: center !important;
 }
 
+#section-end {
+  background-image: url("./../public//images//bg-image-3d.png");
+  background-position-y: 50%;
+}
+
+.with-background {
+  padding: 0;
+  background-image: url("./../public/images/Background\ section\ 1.png");
+  background-position-y: 20%;
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 0) 18%,
+    rgba(145, 117, 255, 1) 97%
+  );
+  background: -webkit-linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 0) 18%,
+    rgba(145, 117, 255, 1) 97%
+  );
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 0) 18%,
+    rgba(145, 117, 255, 1) 97%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#9175ff",GradientType=1);
+}
+
+.img-overlay::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: rgb(204, 0, 159);
+  background: linear-gradient(
+    180deg,
+    rgba(204, 0, 159, 0.2805497198879552) 10%,
+    rgba(0, 4, 92, 0.7399334733893557) 87%
+  );
+  position: absolute;
+}
+
+.bg-dots {
+  padding: 0;
+  background-image: radial-gradient(#cfe7ff 2px, transparent 2px),
+    radial-gradient(#cfe7ff 2px, transparent 2px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  background-color: #fff;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

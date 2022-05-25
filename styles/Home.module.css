@@ -8,11 +8,16 @@
 }
 #sectionAboutUs {
   padding: 0;
-  background-image: url("./../public/images/Background\ section\ 2.png");
+  background-image: radial-gradient(#cfe7ff 2px, transparent 2px),
+    radial-gradient(#cfe7ff 2px, transparent 2px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  background-color: #eaebff83;
+  /* background-image: url("./../public/images/Background\ section\ 2.png");
   background-repeat: no-repeat;
   background-position: right;
   background-position-y: 70%;
-  background-color: #a1e3d8;
+  background-color: #a1e3d8; */
 }
 
 .main {
