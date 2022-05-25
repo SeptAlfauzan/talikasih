@@ -67,12 +67,22 @@ export default function Members({ members }) {
     );
 }
 export async function getStaticProps() {
-    const res = await getMembers();
-    console.log(res)
-    return {
-        props: {
-            members: res,
-        },
-        revalidate: 10
+    try {
+        const res = await getMembers();
+        console.log(res)
+        return {
+            props: {
+                members: res,
+            },
+            revalidate: 10
+        }
+    } catch (error) {
+        console.log(error)
+        return {
+            props: {
+                members: [],
+            },
+            revalidate: 10
+        }
     }
 }

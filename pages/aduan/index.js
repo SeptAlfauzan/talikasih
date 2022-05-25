@@ -59,16 +59,26 @@ export default function Aduan({ data }) {
 }
 
 export async function getStaticProps() {
-    const res = await getPosts();
-    console.log(res);
-    // const posts = await res.data;
+    try {
+        const res = await getPosts();
+        console.log(res);
+        // const posts = await res.data;
 
-    // By returning { props: { posts } }, the Blog component
-    // will receive `posts` as a prop at build time
-    return {
-        props: {
-            data: res,
-        },
-        revalidate: 1
+        // By returning { props: { posts } }, the Blog component
+        // will receive `posts` as a prop at build time
+        return {
+            props: {
+                data: res,
+            },
+            revalidate: 1
+        }
+    } catch (error) {
+        console.log(error)
+        return {
+            props: {
+                data: [],
+            },
+            revalidate: 1
+        }
     }
 }
