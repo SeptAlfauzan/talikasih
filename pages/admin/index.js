@@ -1,5 +1,5 @@
 import CardNav from "../../views/components/cardNav";
-import AdminLayout from "../../views/layouts/AdminLayout";
+import AdminLayout from "../../views/layouts/adminLayout";
 
 export default function Dashboard(props) {
     return (

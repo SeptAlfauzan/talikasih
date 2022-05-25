@@ -2,7 +2,7 @@ import { Space, Table, Tag } from 'antd';
 import React from 'react';
 import axios from 'axios';
 import { getPosts } from '../../../lib/posts';
-import AdminLayout from '../../../views/layouts/AdminLayout';
+import AdminLayout from '../../../views/layouts/adminLayout';
 const columns = [
     {
         title: 'Nama',
