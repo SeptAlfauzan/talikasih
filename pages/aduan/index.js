@@ -8,6 +8,7 @@ export default function Aduan({ data }) {
     const [posts, setPosts] = React.useState([]);
     const datePicker = React.useRef(null);
 
+
     React.useEffect(() => {
         setPosts(data);
     }, [data])
@@ -21,6 +22,7 @@ export default function Aduan({ data }) {
         console.log(filtered)
         setPosts(filtered)
     }
+    if (!data) return null;
     return (
         <UserLayout>
             <main className='min-h-screen mt-10 md:px-36 px-16 with-background'>

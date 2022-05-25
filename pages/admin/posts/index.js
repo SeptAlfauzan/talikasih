@@ -45,7 +45,7 @@ export default function Posts({ posts }) {
         }
         fetchdata();
     }, [])
-
+    if (!posts) return null;
     return (
         <AdminLayout>
             <div className='w-full rounded bg-white px-8 py-2 mb-2 flex flex-row justify-between'>

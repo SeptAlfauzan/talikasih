@@ -51,7 +51,7 @@ export default function Members({ members }) {
         }
         fetchdata();
     }, [])
-
+    if (!members) return null;
     return (
         <AdminLayout>
             <div className='w-full rounded bg-white px-8 py-2 mb-2 flex flex-row justify-between'>
@@ -73,6 +73,6 @@ export async function getStaticProps() {
         props: {
             members: res,
         },
-        revalidate: 1
+        revalidate: 10
     }
 }
