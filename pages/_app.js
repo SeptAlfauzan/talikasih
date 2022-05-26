@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Talikasih</title>
         <meta name="description" content="Portal pengadukan bencana alam." />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <Component {...pageProps} />
     </>

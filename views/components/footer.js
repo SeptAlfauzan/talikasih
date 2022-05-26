@@ -13,11 +13,20 @@ export default function Footer() {
                 <div className='flex-col md:w-1/4 w-1/2'>
                     <h4 className='text-white'>Layanan</h4>
                     <ul>
-                        <li className='text-slate-300 hover:text-white'>Daftar pengaduan</li>
-                        <li className='text-slate-300 hover:text-white'>Buat laporan pengaduan</li>
+                        <Link href={'/aduan'}>
+                            <li className='text-slate-300 hover:text-white cursor-pointer'>
+                                Daftar pengaduan
+                            </li>
+                        </Link>
+                        <Link href={'/laporkan'}>
+                            <li className='text-slate-300 hover:text-white cursor-pointer'>
+                                Buat laporan pengaduan
+                            </li>
+                        </Link>
                     </ul>
-
-                    <h4 className='text-white'>Daftar menjadi member</h4>
+                    <Link href={'/member'}>
+                        <h4 className='text-white cursor-pointer'>Daftar menjadi member</h4>
+                    </Link>
                     <span className=' text-emerald-500 hover:text-emerald-400 text-lg flex flex-row items-center gap-3'>
                         <WhatsAppOutlined /> 082-123-123-xxx
                     </span>
@@ -25,8 +34,15 @@ export default function Footer() {
                 <div className='flex-col md:w-1/4 w-1/2'>
                     <h4 className='text-white'>Lainnya</h4>
                     <ul>
-                        <li className='text-slate-300 hover:text-white'>Tentang kami</li>
-                        <li className='text-slate-300 hover:text-white'>Kelebihan kami</li>
+                        <Link href={'/#about-us'}>
+                            <li className='text-slate-300 hover:text-white cursor-pointer'>
+                                Tentang kami
+                            </li>
+                        </Link>
+                        <Link href={'/#our-strength'}>
+                            <li className='text-slate-300 hover:text-white cursor-pointer'>
+                                Kelebihan kami</li>
+                        </Link>
                     </ul>
                 </div>
                 <div className='flex-col md:w-1/2 w-full'>

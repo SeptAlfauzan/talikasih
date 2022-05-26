@@ -30,12 +30,16 @@ export default function FormReport() {
         setShowAlert(false)
         setIsLoading(true)
 
-        const obj = parseFormToObj();
-        const response = await axios.post('/api/post', obj);
-        response.status == 200 ? setIsSaved(true) : setIsSaved(false);
+        try {
+            const obj = parseFormToObj();
+            const response = await axios.post('/api/post', obj);
+            response.status == 200 ? setIsSaved(true) : setIsSaved(false);
 
-        handleInputsClicked(false);
-        form.current.reset();
+            handleInputsClicked(false);
+            form.current.reset();
+        } catch (error) {
+            console.log(error.message);
+        }
         setIsLoading(false)
         setShowAlert(true)
         // e.reset();

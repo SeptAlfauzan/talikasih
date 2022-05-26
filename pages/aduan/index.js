@@ -2,7 +2,8 @@ import React from 'react';
 import UserLayout from '../../views/layouts/userLayout'
 import { getPosts, getPostsData } from '../../lib/posts';
 import Link from 'next/link';
-import { DatePicker } from 'antd';
+import { DatePicker, Result } from 'antd';
+import { FrownOutlined } from '@ant-design/icons';
 
 export default function Aduan({ data }) {
     const [posts, setPosts] = React.useState([]);
@@ -35,7 +36,12 @@ export default function Aduan({ data }) {
                 </div>
                 <div className='flex flex-wrap  w-full'>
                     {posts.length == 0 && (
-                        <p className='text-center w-full text-2xl'>Tidak ada aduan</p>
+                        <Result
+                            icon={<FrownOutlined />}
+                            title="Tidak ada laporan"
+                            className='text-white mx-auto'
+                            subTitle="Maaf, tidak ada laporan yang ditemukan"
+                        />
                     )}
                     {posts.map((post) => (
                         <div key={post.id} className='lg:w-1/3 md:w-1/2 w-full p-1'>
@@ -45,10 +51,10 @@ export default function Aduan({ data }) {
                                 <p className='mt-4 mb-2 text-slate-400'>Data pelapor</p>
                                 <p className='text-slate-400 text-sm'>Nama: <span className='text-slate-600'>{post.nama}</span></p>
                                 <p className='text-slate-400 text-sm'>Email: <span className='text-slate-600'>{post.email}</span></p>
-                                <p className='mt-3'>Lorem ipsum dolor emet....</p>
-                                <div className='right-2 bottom-2 text-sm text-blue-700 hover:text-white hover:bg-blue-700 rounded-full px-6 py-1 underline absolute duration-150'>
+                                <p className='mt-3'>{post.content}</p>
+                                {/* <div className='right-2 bottom-2 text-sm text-blue-700 hover:text-white hover:bg-blue-700 rounded-full px-6 py-1 underline absolute duration-150'>
                                     <Link href={`/aduan/${post.id}`} >selengkapnya</Link>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     ))}

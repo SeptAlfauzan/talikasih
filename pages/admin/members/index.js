@@ -4,6 +4,13 @@ import axios from 'axios';
 import { getPosts } from '../../../lib/posts';
 import { getMembers } from '../../../lib/member';
 import AdminLayout from '../../../views/layouts/adminLayout';
+
+const handleDelete = async (id) => {
+    // console.log(id)
+    const response = await axios.delete(`/api/member/${id}`);
+    console.log('response')
+}
+
 const columns = [
     {
         title: 'Nama',
@@ -11,9 +18,19 @@ const columns = [
         key: 'name',
     },
     {
-        title: 'Nomor Telp.',
-        dataIndex: 'phone',
-        key: 'phone',
+        title: 'Semester',
+        dataIndex: 'semester',
+        key: 'semester',
+    },
+    {
+        title: 'Prodi',
+        dataIndex: 'major',
+        key: 'major',
+    },
+    {
+        title: 'Instansi',
+        dataIndex: 'from',
+        key: 'from',
     },
     {
         title: 'Alamat',
@@ -21,9 +38,9 @@ const columns = [
         key: 'address',
     },
     {
-        title: 'Instansi',
-        dataIndex: 'agency',
-        key: 'agency',
+        title: 'Alasan mendaftar',
+        dataIndex: 'reason',
+        key: 'reason',
     },
     {
         title: 'Mendaftar',
@@ -34,7 +51,7 @@ const columns = [
         title: 'Action',
         key: 'action',
         render: (_, record) => (
-            <Space size="middle">
+            <Space size="middle" onClick={() => handleDelete(record.id)}>
                 <a>Delete</a>
             </Space>
         ),

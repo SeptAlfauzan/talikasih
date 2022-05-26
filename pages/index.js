@@ -35,7 +35,7 @@ export default function Home() {
         </section>
 
         <section id={styles.sectionAboutUs} className='min-h-screen w-full  flex items-center'>
-          <div className='flex flex-wrap md:px-20 px-10 w-full relative'>
+          <div id="about-us" className='flex flex-wrap md:px-20 px-10 w-full relative'>
             <div className='relative md:w-2/4 w-full md:order-1 order-2'>
               <div className='w-full'>
                 <Image src="/images/aboutus.png" alt="Children smiling" width={898} height={898} />
@@ -49,7 +49,7 @@ export default function Home() {
         </section>
 
         <section className='min-h-screen w-full  flex items-center'>
-          <div className='flex flex-col w-full'>
+          <div id='our-strength' className='flex flex-col w-full'>
             <h1 className='text-center mb-8 text-4xl'>Kelebihan kita</h1>
             <div className='flex flex-wrap justify-center gap-10 w-3/4 mx-auto'>
               <div className='bg-yellow-300 px-10 py-3 flex flex-row md:w-2/6 w-full rounded-xl border-2 border-black items-center'>
@@ -73,18 +73,23 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className='absolute w-full h-screen md:bottom-32 bottom-80 -right-20'>
-          <Image src={'/images/bg-image-3d.png'} alt="background 3D" layout='fill'
-            objectFit='contain' className='min-h-screen' />
-        </div>
-        <section className='h-screen w-full  flex flex-col justify-center md:px-40 px-10'>
-          <div className='w-2/4 z-20 md:-mt-40'>
+
+        <section className='h-screen w-full flex flex-wrap justify-center items-center md:px-40 border'>
+          <div className='md:w-1/2 w-full md:relative absolute z-20 md:px-0 px-10'>
             <h1 className='text-4xl'>
               Tunggu apa lagi, buat aduanmu sekarang juga.
             </h1>
-            <button className='bg-purple-500 w-2/5 px-5 py-2 rounded-lg mt-8 text-white'>
-              Selengkapnya
-            </button>
+            <Link href={'/laporkan'}>
+              <button className='bg-purple-500 w-2/5 px-5 py-2 rounded-lg mt-8 text-white'>
+                Buat Aduan
+              </button>
+            </Link>
+          </div>
+          <div className='relative md:w-1/2 w-full h-full overflow-clip'>
+            <div className='w-full h-full absolute md:bottom-0 md:right-0 -right-64 -bottom-56'>
+              <Image src={'/images/images-2.png'} alt="background images" layout='fill'
+                objectFit='contain' className='min-h-screen' />
+            </div>
           </div>
         </section>
       </main>
