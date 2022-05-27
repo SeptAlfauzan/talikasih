@@ -55,7 +55,7 @@ export default function Home() {
         </section>
 
         <section className='w-full  flex flex-col justify-center py-10'>
-          <h3 className='text-center text-4xl h-10'>Patner Kami</h3>
+          <h3 className='text-center text-4xl h-10'>Partner Kami</h3>
           <div id='patner' className='flex flex-wrap w-full relative h-32 md:px-40 px-10'>
             <div className='w-1/3 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 duration-300'>
               <Image src={'/images/logos/bpbd.png'} alt="BPBD" layout='fill'
