@@ -19,7 +19,9 @@ export default async function handler(req, res) {
             break;
         default:
             const data = await getMembers();
-            res.status(200).json(data);
+            data ?
+                res.status(200).json(data) :
+                res.status(500);
             break;
     }
 }
