@@ -21,9 +21,11 @@ export default function Home() {
               <h1 className='text-2xl text-slate-500 mt-5'>
                 Portal pengaduan bencana alam
               </h1>
-              <button className='bg-purple-500 w-2/5 px-5 py-2 rounded-lg mt-12 text-white'>
-                Selengkapnya
-              </button>
+              <a href='#about-us'>
+                <button className='bg-purple-500 w-2/5 px-5 py-2 rounded-lg mt-12 text-white'>
+                  Selengkapnya
+                </button>
+              </a>
             </div>
             <div className='md:block hidden w-1/2  relative'>
               <Image src="/images/landing-1.png" alt="Old Couples" width={522} height={539} />
@@ -48,6 +50,23 @@ export default function Home() {
           </div>
         </section>
 
+        <section className='w-full  flex flex-col justify-center py-10'>
+          <h3 className='text-center text-4xl h-10'>Patner Kami</h3>
+          <div id='patner' className='flex flex-wrap w-full relative h-32 md:px-40 px-10'>
+            <div className='w-1/3 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 duration-300'>
+              <Image src={'/images/logos/bpbd.png'} alt="BPBD" layout='fill'
+                objectFit='contain' />
+            </div>
+            <div className='w-1/3 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 duration-300'>
+              <Image src={'/images/logos/dinsos.png'} alt="Dinsos" layout='fill'
+                objectFit='contain' />
+            </div>
+            <div className='w-1/3 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 duration-300'>
+              <Image src={'/images/logos/pemda.png'} alt="Pemda Bandung" layout='fill'
+                objectFit='contain' className='w-full h-full' />
+            </div>
+          </div>
+        </section>
         <section className='min-h-screen w-full  flex items-center'>
           <div id='our-strength' className='flex flex-col w-full'>
             <h1 className='text-center mb-8 text-4xl'>Kelebihan kita</h1>

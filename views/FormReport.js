@@ -42,6 +42,13 @@ const FormOne = ({ states, stateHandler }) => {
                     Lokasi harus diisi
                 </p>
             </div>
+            <div className='mb-5'>
+                <label>Deskripsi</label>
+                <textarea name='content' required onBlur={() => setEmailClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-100 ${emailClicked ? ' invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
+                <p className={`mt-2 text-xs  invisible ${emailClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                    Deskripsi harus diisi
+                </p>
+            </div>
         </>
     )
 }

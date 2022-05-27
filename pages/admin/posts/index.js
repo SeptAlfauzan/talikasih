@@ -10,12 +10,27 @@ const columns = [
         key: 'name',
     },
     {
-        title: 'Email',
-        dataIndex: 'email',
-        key: 'email',
+        title: 'NIK',
+        dataIndex: 'nik',
+        key: 'nik',
     },
     {
-        title: 'Laporan',
+        title: 'Lokasi',
+        dataIndex: 'location',
+        key: 'location',
+    },
+    {
+        title: 'Kerugian',
+        dataIndex: 'loss',
+        key: 'loss',
+    },
+    {
+        title: 'Buka donasi',
+        dataIndex: 'donation',
+        key: 'donation',
+    },
+    {
+        title: 'Deskripsi',
         dataIndex: 'content',
         key: 'content',
     },

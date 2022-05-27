@@ -1,5 +1,6 @@
 html,
 body {
+  scroll-behavior: smooth;
   /* background-color: #fbf8ef; */
   padding: 0;
   margin: 0;

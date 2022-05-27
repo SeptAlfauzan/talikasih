@@ -48,9 +48,9 @@ export default function Aduan({ data }) {
 
                             <div className='bg-white border pt-6 pb-10 px-8 rounded-lg  relative mb-2'>
                                 <p className='flex justify-between text-slate-400 text-xs'>Dibuat: <span className='text-slate-600'>{post.created_at.slice(0, 10)}</span></p>
-                                <p className='mt-4 mb-2 text-slate-400'>Data pelapor</p>
-                                <p className='text-slate-400 text-sm'>Nama: <span className='text-slate-600'>{post.nama}</span></p>
-                                <p className='text-slate-400 text-sm'>Email: <span className='text-slate-600'>{post.email}</span></p>
+                                <p className='mt-4 mb-2 text-slate-400'>Data laporan</p>
+                                <p className='text-slate-400 text-sm'>Lokasi: <span className='text-slate-600'>{post.location}</span></p>
+                                <p className='text-slate-400 text-sm'>Kerugian: <span className='text-slate-600'>RP{post.loss}</span></p>
                                 <p className='mt-3'>{post.content}</p>
                                 {/* <div className='right-2 bottom-2 text-sm text-blue-700 hover:text-white hover:bg-blue-700 rounded-full px-6 py-1 underline absolute duration-150'>
                                     <Link href={`/aduan/${post.id}`} >selengkapnya</Link>

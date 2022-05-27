@@ -27,9 +27,11 @@ export default function Footer() {
                     <Link href={'/member'}>
                         <h4 className='text-white cursor-pointer'>Daftar menjadi member</h4>
                     </Link>
-                    <span className=' text-emerald-500 hover:text-emerald-400 text-lg flex flex-row items-center gap-3'>
-                        <WhatsAppOutlined /> 082-123-123-xxx
-                    </span>
+                    <a href='https://wa.me/081357476730' target={'_blank'} rel="noreferrer" >
+                        <span className=' text-emerald-500 hover:text-emerald-400 text-lg flex flex-row items-center gap-3'>
+                            <WhatsAppOutlined /> 0813-5747-6730
+                        </span>
+                    </a>
                 </div>
                 <div className='flex-col md:w-1/4 w-1/2'>
                     <h4 className='text-white'>Lainnya</h4>
@@ -48,10 +50,10 @@ export default function Footer() {
                 <div className='flex-col md:w-1/2 w-full'>
                     <h4 className='text-white'>Kantor kami</h4>
                     <span className='flex flex-row items-center gap-3 mb-3'>
-                        <EnvironmentFilled />Tanggulturus
+                        <EnvironmentFilled />Politeknik Kesejahteraan, Bandung
                     </span>
                     <div className="rounded-lg overflow-clip">
-                        <iframe src="https://maps.google.com/maps?q=tanggulturus&t=&z=17&ie=UTF8&iwloc=&output=embed" className='w-full h-full' frameBorder="0" style={{ border: 0 }} allowFullScreen={true} aria-hidden="false" tabIndex="0"></iframe>
+                        <iframe src="https://maps.google.com/maps?q=Politeknik%20Kesejahteraan%20bandung&t=&z=13&ie=UTF8&iwloc=&output=embed" className='w-full h-full' frameBorder="0" style={{ border: 0 }} allowFullScreen={true} aria-hidden="false" tabIndex="0"></iframe>
                     </div>
                 </div>
             </div>
