@@ -59,7 +59,7 @@ const FormTwo = ({ states, stateHandler }) => {
         <>
             <div className='mb-3'>
                 <label>Jumlah kerugian</label>
-                <input name='loss' required type='number' onBlur={() => setlossClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${lossClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
+                <input name='loss' required type='text' onBlur={() => setlossClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${lossClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
                 <p className={`mt-2 text-xs  invisible ${lossClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                     Jumlah kerugian harus diisi
                 </p>
