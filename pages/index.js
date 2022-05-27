@@ -45,7 +45,11 @@ export default function Home() {
             </div>
             <div className='md:w-1/2 w-full md:pl-20 md:order-2 order-1 flex flex-col justify-center backdrop-blur-sm'>
               <h1 className='text-6xl'>Tentang Kami</h1>
-              <p className='mt-3 text-slate-500 text-lg'>Lorem ipsum dolor emet, lorem ipsum dolor emet. Lorem ipsum dolor emet, lorem ipsum dolor emetLorem ipsum dolor emet, lorem ipsum dolor emet. Lorem ipsum dolor emet, lorem ipsum dolor  Lorem ipsum dolor emet, lorem ipsum dolor emet. Lorem ipsum dolor emet, lorem ipsum dolor emet</p>
+
+              <h1 className='text-2xl mt-3'>Visi</h1>
+              <p className='mt-3 text-slate-500 text-lg'>Menjadi suatu organisasi profesional yang memiliki tujuan dalam membantu dan memajukan serta mensejahterahkan masyarakat indonesia.</p>
+              <h1 className='text-2xl mt-3'>Misi</h1>
+              <p className='mt-3 text-slate-500 text-lg'>Mengajak masyarakat umum, badan usaha & komunitas lain  untuk ikut serta dalam penggalangan bantuan berupa sumbangan materi, tenaga serta pikiran yang bermanfaat bagi masyarakat kurang mampu di indonesia</p>
             </div>
           </div>
         </section>
