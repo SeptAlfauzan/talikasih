@@ -1,13 +1,18 @@
 import { WhatsAppOutlined, EnvironmentFilled } from '@ant-design/icons'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 export default function Footer() {
     return (
         <footer className='bottom-0 w-full bg-black flex flex-col md:px-40 px-10 py-10'>
             <h3 className='text-white text-2xl'>
-                <Link href={'/'}>
-                    Talikasih.site
-                </Link>
+                <a href={'/'} className='flex flex-row items-center'>
+                    <div className='relative w-14 h-14'>
+
+                        <Image src='/icon with text.png' alt="logo" layout='fill' objectFit='contain' />
+                    </div>
+                    <h3 className='text-3xl text-red-500'>Talikasih</h3>
+                </a>
             </h3>
             <div className='text-white flex md:flex-row flex-wrap'>
                 <div className='flex-col md:w-1/4 w-1/2'>
@@ -25,8 +30,9 @@ export default function Footer() {
                         </Link>
                     </ul>
                     <Link href={'/member'}>
-                        <h4 className='text-white cursor-pointer'>Daftar menjadi member</h4>
+                        <h4 className='text-slate-300 hover:text-white cursor-pointer'>Daftar menjadi member</h4>
                     </Link>
+                    <h4 className='text-white cursor-pointer'>Hubungi kami</h4>
                     <a href='https://wa.me/081357476730' target={'_blank'} rel="noreferrer" >
                         <span className=' text-emerald-500 hover:text-emerald-400 text-lg flex flex-row items-center gap-3'>
                             <WhatsAppOutlined /> 0813-5747-6730
