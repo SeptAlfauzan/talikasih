@@ -77,31 +77,35 @@ export default function FormDonasi() {
                     <h4>Metode pembayaran yang tersedia</h4>
                     <h5 className='text-slate-400'>Transfer bank</h5>
 
-                    <div className='flex gap-3 justify-between items-center'>
-                        <span>0983100041 An Thania Pardede</span>
+                    <div className='flex flex-wrap border-b justify-between items-center'>
+                        <span>0983100041</span>
                         <div className='relative w-20 h-10'>
                             <Image src={'/images/logos/logo-bni.png'} layout='fill' objectFit='contain' alt='logo bni' />
                         </div>
+                        <small className='w-full text-slate-400'>Thania Pardede</small>
                     </div>
 
-                    <h5 className='text-slate-400'>E-money</h5>
-                    <div className='flex gap-3 justify-between items-center'>
+                    <h5 className='text-slate-400 mt-3'>E-money</h5>
+                    <div className='flex flex-wrap border-b justify-between items-center'>
                         <span>081262615364</span>
                         <div className='relative w-20 h-10'>
                             <Image src={'/images/logos/logo-ovo.png'} layout='fill' objectFit='contain' alt='logo ovo' />
                         </div>
+                        <small className='w-full text-slate-400'>Thania Pardede</small>
                     </div>
-                    <div className='flex gap-3 justify-between items-center'>
+                    <div className='flex flex-wrap border-b justify-between items-center'>
                         <span>0895611752046</span>
                         <div className='relative w-20 h-10'>
                             <Image src={'/images/logos/logo-gopay.png'} layout='fill' objectFit='contain' alt='logo gopay' />
                         </div>
+                        <small className='w-full text-slate-400'>Thania Pardede</small>
                     </div>
-                    <div className='flex gap-3 justify-between items-center'>
+                    <div className='flex flex-wrap border-b justify-between items-center'>
                         <span>0895611752046</span>
                         <div className='relative w-20 h-10'>
                             <Image src={'/images/logos/logo-spay.png'} layout='fill' objectFit='cover' alt='logo spay' />
                         </div>
+                        <small className='w-full text-slate-400'>Thania Pardede</small>
                     </div>
                 </div>
                 <small className='text-red-500 mt-3'>*isi form dibawah ini setelah melakukan transfer donasi</small>
