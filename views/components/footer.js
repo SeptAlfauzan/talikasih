@@ -33,7 +33,7 @@ export default function Footer() {
                         <h4 className='text-slate-300 hover:text-white cursor-pointer'>Daftar menjadi member</h4>
                     </Link>
                     <h4 className='text-white cursor-pointer'>Hubungi kami</h4>
-                    <a href='https://wa.me/081357476730' target={'_blank'} rel="noreferrer" >
+                    <a href='https://wa.me/+6281357476730' target={'_blank'} rel="noreferrer" >
                         <span className=' text-emerald-500 hover:text-emerald-400 text-lg flex flex-row items-center gap-3'>
                             <WhatsAppOutlined /> 0813-5747-6730
                         </span>

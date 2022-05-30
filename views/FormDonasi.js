@@ -1,13 +1,16 @@
 import axios from 'axios';
 import React from 'react';
 import Alert from './components/alert';
+import { useRouter } from 'next/router';
 import { Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
+import { setCookies } from 'cookies-next';
+import Image from 'next/image'
 
 const LoadingComp = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 
-export default function FormMember() {
+export default function FormDonasi() {
     const [nameClicked, setNameClicked] = React.useState(false);
     const [fromClicked, setFromClicked] = React.useState(false);
     const [semesterClicked, setSemesterClicked] = React.useState(false);
@@ -18,7 +21,9 @@ export default function FormMember() {
     const [isSaved, setIsSaved] = React.useState(null);
     const [isLoading, setIsLoading] = React.useState(false);
     const [showAlert, setShowAlert] = React.useState(false);
+
     const form = React.useRef(null);
+    const router = useRouter();
 
     const handleInputsClicked = (arg) => {
         setNameClicked(arg)
@@ -34,11 +39,9 @@ export default function FormMember() {
         setShowAlert(false)
         setIsLoading(true)
         try {
-
             const obj = parseFormToObj();
             console.log(obj)
-            obj.semester = Number(obj.semester);
-            const response = await axios.post('/api/member', obj);
+            const response = await axios.post('/api/donation', obj);
             response.status == 200 ? setIsSaved(true) : setIsSaved(false);
 
             handleInputsClicked(false);
@@ -48,8 +51,9 @@ export default function FormMember() {
         }
 
         setIsLoading(false)
-        setShowAlert(true)
-        // e.reset();
+        const token = "await generateToken(obj, '1m')";
+        setCookies('submited', token, { maxAge: 5 });
+        router.push('/success-donate');
     }
 
     return (
@@ -68,48 +72,58 @@ export default function FormMember() {
                 )}
             </div>
             <form className='bg-white flex flex-wrap md:w-2/4 w-3/4 relative px-10 mx-auto rounded-lg shadow-xl py-8 mt-10' ref={form} onSubmit={handleSubmit}>
+                <h2 className='text-xl mb-3 font-bold w-full'>Isi Form Donasi</h2>
+                <div className='py-5 px-3 rounded bg-slate-50 w-full'>
+                    <h4>Metode pembayaran yang tersedia</h4>
+                    <h5 className='text-slate-400'>Transfer bank</h5>
 
-                <h2 className='text-xl mb-3 font-bold'>Isi Form Daftar Member</h2>
-                <div className='mb-3 w-1/2 p-1'>
+                    <div className='flex gap-3 justify-between items-center'>
+                        <span>0983100041 An Thania Pardede</span>
+                        <div className='relative w-20 h-10'>
+                            <Image src={'/images/logos/logo-bni.png'} layout='fill' objectFit='contain' alt='logo bni' />
+                        </div>
+                    </div>
+
+                    <h5 className='text-slate-400'>E-money</h5>
+                    <div className='flex gap-3 justify-between items-center'>
+                        <span>081262615364</span>
+                        <div className='relative w-20 h-10'>
+                            <Image src={'/images/logos/logo-ovo.png'} layout='fill' objectFit='contain' alt='logo ovo' />
+                        </div>
+                    </div>
+                    <div className='flex gap-3 justify-between items-center'>
+                        <span>0895611752046</span>
+                        <div className='relative w-20 h-10'>
+                            <Image src={'/images/logos/logo-gopay.png'} layout='fill' objectFit='contain' alt='logo gopay' />
+                        </div>
+                    </div>
+                    <div className='flex gap-3 justify-between items-center'>
+                        <span>0895611752046</span>
+                        <div className='relative w-20 h-10'>
+                            <Image src={'/images/logos/logo-spay.png'} layout='fill' objectFit='cover' alt='logo spay' />
+                        </div>
+                    </div>
+                </div>
+                <small className='text-red-500'>*isi form dibawah ini setelah melakukan transfer donasi</small>
+                <div className='mb-3 md:w-1/2 w-full p-1'>
                     <label>Nama</label>
                     <input name='name' required type='text' onBlur={() => setNameClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${nameClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
                     <p className={`mt-2 text-xs  invisible ${nameClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                         Nama harus diisi
                     </p>
                 </div>
-                <div className='mb-3 w-1/2 p-1'>
-                    <label>Instansi</label>
-                    <input name='from' required type='text' onBlur={() => setFromClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${fromClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
+                <div className='mb-3 md:w-1/2 w-full p-1'>
+                    <label>Jumlah Donasi</label>
+                    <input name='amount' required type='number' onBlur={() => setFromClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${fromClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
                     <p className={`mt-2 text-xs  invisible ${fromClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
-                        Instansi harus diisi
-                    </p>
-                </div>
-                <div className='mb-3 w-1/2 p-1'>
-                    <label>Semester</label>
-                    <input name='semester' required type='number' onBlur={() => setSemesterClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${semesterClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                    <p className={`mt-2 text-xs  invisible ${semesterClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
-                        Semester harus diisi
-                    </p>
-                </div>
-                <div className='mb-3 w-1/2 p-1'>
-                    <label>Prodi</label>
-                    <input name='major' required type='text' onBlur={() => setMajorClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${majorClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                    <p className={`mt-2 text-xs  invisible ${majorClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
-                        Prodi harus diisi
+                        Jumlah donasi harus diisi
                     </p>
                 </div>
                 <div className='mb-3 w-full p-1'>
                     <label>Alamat</label>
-                    <input name='address' type='text' required onBlur={() => setAddressClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50  ${addressClicked ? ' invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                    <p className={`mt-2 text-xs  invisible  ${addressClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                    <input name='address' required type='text' onBlur={() => setSemesterClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${semesterClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
+                    <p className={`mt-2 text-xs  invisible ${semesterClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                         Alamat harus diisi
-                    </p>
-                </div>
-                <div className='mb-5 w-full p-1'>
-                    <label>Alasan mendaftar</label>
-                    <textarea name='reason' required onBlur={() => setReasonClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-100 ${reasonClicked ? ' invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                    <p className={`mt-2 text-xs  invisible ${reasonClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
-                        Alasan harus diisi
                     </p>
                 </div>
 
@@ -117,7 +131,7 @@ export default function FormMember() {
                     {isLoading ? (
                         <Spin indicator={LoadingComp} />
                     ) : (
-                        <span>Submit Pendaftaran</span>
+                        <span>Submit Donasi</span>
                     )}
                 </button>
             </form>

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
+import FormDonasi from '../../views/FormDonasi'
 import UserLayout from '../../views/layouts/userLayout'
-import FormMember from '../../views/FormMember';
 export default function Donasi() {
     return (
         <UserLayout>
@@ -11,7 +11,7 @@ export default function Donasi() {
                     <Image src={'/images/donation.jpg'} objectFit="cover" alt="background" layout='fill' />
                 </div>
                 <div className='md:w-3/4 w-full left-0 right-0 mx-auto -mt-60 border'>
-                    <FormMember />
+                    <FormDonasi />
                 </div>
             </main>
         </UserLayout>

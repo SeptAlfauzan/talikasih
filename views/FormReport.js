@@ -64,11 +64,6 @@ const FormTwo = ({ states, stateHandler }) => {
                     Jumlah kerugian harus diisi
                 </p>
             </div>
-            <div className='mb-3'>
-                <label>Buka donasi</label>
-                <p className='text-xs text-blue-500'>Centang jika ingin membuka donasi</p>
-                <input name='donation' type='checkbox' className='input block mb-3' />
-            </div>
         </>
     )
 }
