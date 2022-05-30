@@ -4,7 +4,7 @@ import { Button, Result } from "antd";
 export default function SuccessDonate() {
     return (
         <div className="w-full h-screen flex items-center justify-center bg-blue-50">
-            <div className="w-1/4 rounded-lg  bg-white">
+            <div className="md:w-1/4 w-3/4 rounded-lg  bg-white">
                 <Result
                     status="success"
                     title="Yay, berhasil menambahkan donasi!"

@@ -21,33 +21,33 @@ const FormOne = ({ states, stateHandler }) => {
     } = stateHandler;
     return (
         <>
-            <div className='mb-3'>
+            <div className=''>
                 <label>Nama</label>
                 <input name='name' required type='text' onBlur={() => setNameClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${nameClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                <p className={`mt-2 text-xs  invisible ${nameClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                <span className={`mt-2 text-xs  invisible ${nameClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                     Nama harus diisi
-                </p>
+                </span>
             </div>
-            <div className='mb-3'>
+            <div className=''>
                 <label>NIK</label>
                 <input name='nik' type='number' required onBlur={() => setEmailClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50  ${emailClicked ? ' invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                <p className={`mt-2 text-xs  invisible  ${emailClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                <span className={`mt-2 text-xs  invisible  ${emailClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                     NIK tidak valid
-                </p>
+                </span>
             </div>
             <div className='mb-5'>
                 <label>Lokasi</label>
                 <textarea name='location' required onBlur={() => setReportClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-100 ${reportClicked ? ' invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                <p className={`mt-2 text-xs  invisible ${reportClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                <span className={`mt-2 text-xs  invisible ${reportClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                     Lokasi harus diisi
-                </p>
+                </span>
             </div>
             <div className='mb-5'>
                 <label>Deskripsi</label>
                 <textarea name='content' required onBlur={() => setEmailClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-100 ${emailClicked ? ' invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                <p className={`mt-2 text-xs  invisible ${emailClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                <span className={`mt-2 text-xs  invisible ${emailClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                     Deskripsi harus diisi
-                </p>
+                </span>
             </div>
         </>
     )
@@ -57,12 +57,12 @@ const FormTwo = ({ states, stateHandler }) => {
     const { setlossClicked } = stateHandler;
     return (
         <>
-            <div className='mb-3'>
+            <div className=''>
                 <label>Jumlah kerugian</label>
                 <input name='loss' required type='text' onBlur={() => setlossClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${lossClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                <p className={`mt-2 text-xs  invisible ${lossClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                <span className={`mt-2 text-xs  invisible ${lossClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                     Jumlah kerugian harus diisi
-                </p>
+                </span>
             </div>
         </>
     )
@@ -152,7 +152,7 @@ export default function FormReport() {
             </div>
             <form className='bg-white flex flex-col md:w-2/4 w-3/4 relative px-10 mx-auto rounded-lg shadow-xl py-8 mt-10' ref={form} onSubmit={handleSubmit}>
 
-                <h2 className='text-xl mb-3 font-bold'>Isi Laporan Pengaduan</h2>
+                <h2 className='text-xl  font-bold'>Isi Laporan Pengaduan</h2>
 
                 <div className='w-full flex justify-between md:px-8 px-10 relative mb-5'>
                     {forms.map((form, index) => (

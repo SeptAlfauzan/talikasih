@@ -72,7 +72,7 @@ export default function FormDonasi() {
                 )}
             </div>
             <form className='bg-white flex flex-wrap md:w-2/4 w-3/4 relative px-10 mx-auto rounded-lg shadow-xl py-8 mt-10' ref={form} onSubmit={handleSubmit}>
-                <h2 className='text-xl mb-3 font-bold w-full'>Isi Form Donasi</h2>
+                <h2 className='text-xl  font-bold w-full'>Isi Form Donasi</h2>
                 <div className='py-5 px-3 rounded bg-slate-50 w-full'>
                     <h4>Metode pembayaran yang tersedia</h4>
                     <h5 className='text-slate-400'>Transfer bank</h5>
@@ -104,27 +104,27 @@ export default function FormDonasi() {
                         </div>
                     </div>
                 </div>
-                <small className='text-red-500'>*isi form dibawah ini setelah melakukan transfer donasi</small>
-                <div className='mb-3 md:w-1/2 w-full p-1'>
+                <small className='text-red-500 mt-3'>*isi form dibawah ini setelah melakukan transfer donasi</small>
+                <div className=' md:w-1/2 w-full p-1'>
                     <label>Nama</label>
                     <input name='name' required type='text' onBlur={() => setNameClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${nameClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                    <p className={`mt-2 text-xs  invisible ${nameClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                    <span className={`mt-2 text-xs  invisible ${nameClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                         Nama harus diisi
-                    </p>
+                    </span>
                 </div>
-                <div className='mb-3 md:w-1/2 w-full p-1'>
+                <div className=' md:w-1/2 w-full p-1'>
                     <label>Jumlah Donasi</label>
                     <input name='amount' required type='number' onBlur={() => setFromClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${fromClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                    <p className={`mt-2 text-xs  invisible ${fromClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                    <span className={`mt-2 text-xs  invisible ${fromClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                         Jumlah donasi harus diisi
-                    </p>
+                    </span>
                 </div>
-                <div className='mb-3 w-full p-1'>
+                <div className=' w-full p-1'>
                     <label>Alamat</label>
                     <input name='address' required type='text' onBlur={() => setSemesterClicked(true)} className={`input peer border-2  w-full focus:border-purple-300 focus:bg-purple-50 ${semesterClicked ? 'invalid:text-red-500 invalid:border-red-500' : null} outline-none rounded-lg px-3 py-1`} />
-                    <p className={`mt-2 text-xs  invisible ${semesterClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
+                    <span className={`mt-2 text-xs  invisible ${semesterClicked ? 'peer-invalid:visible' : null} text-pink-600 text-sm`}>
                         Alamat harus diisi
-                    </p>
+                    </span>
                 </div>
 
                 <button className='w-full bg-purple-500 py-3 text-white rounded-lg hover:bg-purple-700'>
