@@ -4,12 +4,8 @@ import axios from 'axios';
 import { getPosts } from '../../../lib/posts';
 import { getMembers } from '../../../lib/member';
 import AdminLayout from '../../../views/layouts/adminLayout';
+import { Router, useRouter } from 'next/router';
 
-const handleDelete = async (id) => {
-    // console.log(id)
-    const response = await axios.delete(`/api/member/${id}`);
-    console.log('response')
-}
 
 const columns = [
     {
@@ -47,20 +43,25 @@ const columns = [
         dataIndex: 'created_at',
         key: 'created_at',
     },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle" onClick={() => handleDelete(record.id)}>
-                <a>Delete</a>
-            </Space>
-        ),
-    },
 ];
 
 export default function Members({ members }) {
     const [csv, setCesv] = React.useState(null);
-    console.log(members)
+    const [data, setData] = React.useState(null)
+    const router = useRouter();
+
+    const handleDelete = async (data, setData, id) => {
+        try {
+            await axios.delete(`/api/member?id=${id}`);
+            router.reload();
+            // const newData = data.map(d => d.id != id)
+            // setData(newData)
+        } catch (error) {
+
+        }
+
+    }
+
     React.useEffect(() => {
         const fetchdata = async () => {
             const response = await axios.get('/api/export/members');
@@ -68,6 +69,10 @@ export default function Members({ members }) {
         }
         fetchdata();
     }, [])
+    React.useEffect(() => {
+        setData(members)
+    }, [data, members]);
+
     if (!members) return null;
     return (
         <AdminLayout>
@@ -78,7 +83,24 @@ export default function Members({ members }) {
                 </a>
             </div>
             <div className='h-80 overflow-y-auto'>
-                <Table columns={columns} dataSource={members} pagination={false} />
+                <Table dataSource={data} pagination={false} >
+                    <Table.Column title="Nama" dataIndex="name" key="name" />
+                    <Table.Column title="Semester" dataIndex="semester" key="semester" />
+                    <Table.Column title="Prodi" dataIndex="major" key="major" />
+                    <Table.Column title="Instansi" dataIndex="from" key="from" />
+                    <Table.Column title="Alamat" dataIndex="address" key="address" />
+                    <Table.Column title="Alasan mendaftar" dataIndex="reason" key="reason" />
+                    <Table.Column title="Waktu daftar" dataIndex="created_at" key="created_at" />
+                    <Table.Column
+                        title="Action"
+                        key="action"
+                        render={(_, record) => (
+                            <Space size="middle" onClick={() => handleDelete(members, setData, record.id)}>
+                                <a>Delete</a>
+                            </Space>
+                        )}
+                    />
+                </Table>
             </div>
         </AdminLayout>
     );
@@ -91,7 +113,7 @@ export async function getStaticProps() {
             props: {
                 members: res,
             },
-            revalidate: 10
+            revalidate: 1
         }
     } catch (error) {
         console.log('error')
@@ -99,7 +121,7 @@ export async function getStaticProps() {
             props: {
                 members: [],
             },
-            revalidate: 10
+            revalidate: 1
         }
     }
 }

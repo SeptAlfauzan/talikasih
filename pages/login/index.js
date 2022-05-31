@@ -1,18 +1,23 @@
 import axios from 'axios';
 import React from 'react';
+import { useRouter } from 'next/router';
 import InputFloatingLabel from '../../views/components/inputFloatingLabel';
 
 export default function Login(props) {
     const form = React.useRef(null);
-
+    const router = useRouter();
     const parseFormToObj = () => {
         return Object.assign(...[...form.current.querySelectorAll('.input')].map(input => ({ [input.name]: input.value })));
     }
     const handleLogin = async (e) => {
         e.preventDefault();
-        const input = parseFormToObj();
-        console.log(input);
-        await axios.post('/api/auth', input);
+        try {
+            const input = parseFormToObj();
+            await axios.post('/api/auth', input);
+            router.push('/admin')
+        } catch (error) {
+            alert(error.message);
+        }
     }
 
     return (

@@ -1,7 +1,19 @@
 import React from 'react';
 import Link from "next/link";
-import { FileSearchOutlined, HomeOutlined, LogoutOutlined, MenuOutlined, UserOutlined } from '@ant-design/icons';
+import { useRouter } from "next/router";
+import { FileSearchOutlined, HomeOutlined, LogoutOutlined, MenuOutlined, MoneyCollectOutlined, UserOutlined } from '@ant-design/icons';
+import axios from 'axios';
 export default function AdminLayout({ children }) {
+    const router = useRouter()
+
+    const handleLogout = async () => {
+        try {
+            await axios.get('/api/auth?logout=true');
+            router.push('/login');
+        } catch (error) {
+
+        }
+    }
     return (
         <div className='flex flex-row min-h-full py-10 md:px-20 px-10' style={{
             background: '#F0F2F5'
@@ -26,12 +38,18 @@ export default function AdminLayout({ children }) {
                         Member
                     </div>
                 </Link>
-                <Link href={'/admin/members'}>
+                <Link href={'/admin/donation'}>
+                    <div className='flex flex-row cursor-pointer hover:text-blue-500 gap-3 text-lg items-center'>
+                        <MoneyCollectOutlined />
+                        Donasi
+                    </div>
+                </Link>
+                <button onClick={handleLogout}>
                     <div className='flex flex-row cursor-pointer hover:text-blue-500 gap-3 text-lg items-center'>
                         <LogoutOutlined />
                         Logout
                     </div>
-                </Link>
+                </button>
                 <div className='md:hidden absolute border  bg-white w-10 h-10 flex items-center justify-center rounded-md right-0'>
                     <MenuOutlined />
                 </div>

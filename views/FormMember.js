@@ -59,7 +59,7 @@ export default function FormMember() {
                     <Alert onClose={() => setShowAlert(false)} >
                         <div className={`w-full border rounded-lg py-3 px-10 ${isSaved ? 'border-emerald-400 bg-emerald-400' : 'border-red-400 bg-red-400'}`}>
                             {isSaved ? (
-                                <span>Berhasil mendaftar</span>
+                                <span>Berhasil mendaftar, <b>silahkan menghubungi contact person kami</b></span>
                             ) : (
                                 <span>Gagal mendaftar</span>
                             )}
