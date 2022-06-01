@@ -73,7 +73,7 @@ export default function Home() {
         </section>
         <section className='min-h-screen w-full  flex items-center'>
           <div id='our-strength' className='flex flex-col w-full'>
-            <h1 className='text-center mb-8 text-4xl'>Kelebihan kita</h1>
+            <h1 className='text-center mb-8 text-4xl'>Kelebihan kami</h1>
             <div className='flex flex-wrap justify-center gap-10 w-3/4 mx-auto'>
               <div className='bg-yellow-300 px-10 py-3 flex flex-row md:w-2/6 w-full rounded-xl border-2 border-black items-center'>
                 <div>

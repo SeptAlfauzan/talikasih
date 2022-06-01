@@ -18,14 +18,14 @@ export default function Footer() {
                 <div className='flex-col md:w-1/4 w-1/2'>
                     <h4 className='text-white'>Layanan</h4>
                     <ul>
-                        <Link href={'/aduan'}>
-                            <li className='text-slate-300 hover:text-white cursor-pointer'>
-                                Daftar pengaduan
-                            </li>
-                        </Link>
                         <Link href={'/laporkan'}>
                             <li className='text-slate-300 hover:text-white cursor-pointer'>
                                 Buat laporan pengaduan
+                            </li>
+                        </Link>
+                        <Link href={'/donasi'}>
+                            <li className='text-slate-300 hover:text-white cursor-pointer'>
+                                Kirim donasi
                             </li>
                         </Link>
                     </ul>
